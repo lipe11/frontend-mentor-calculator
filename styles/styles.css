@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;700&display=swap');
 
-@import '_themes.css';
-@import '_layout.css';
-@import '_theme-switcher.css';
-@import '_calc-display.css';
-@import '_calc-button.css';
+@import 'themes.css';
+@import 'layout.css';
+@import 'theme-switcher.css';
+@import 'calc-display.css';
+@import 'calc-button.css';
