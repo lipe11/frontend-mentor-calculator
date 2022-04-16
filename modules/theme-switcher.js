@@ -1,12 +1,10 @@
 class ThemeSwitcher extends HTMLElement {
-  // on mounted
   connectedCallback() {
     const themes = this.attributes.themes.value.split(' ')
     this.createOptions(themes)
     this.selectOption(0, themes[0])
   }
 
-  // create option for each theme
   createOptions(themes) {
     themes.forEach((theme, index) => {
       const label = index + 1
@@ -14,7 +12,6 @@ class ThemeSwitcher extends HTMLElement {
     })
   }
 
-  // generate dom element for option
   createOptionElement(label, handler) {
     const div = document.createElement('div')
     div.innerHTML = `
@@ -25,7 +22,6 @@ class ThemeSwitcher extends HTMLElement {
     this.append(div)
   }
 
-  // when option is selected
   selectOption(index, theme) {
     this.querySelectorAll('button').forEach(
       (button) => (button.style.opacity = 0)

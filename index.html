@@ -22,28 +22,28 @@
       <calc-display></calc-display>
 
       <div class="keypad">
-        <calc-button key="7" action="append"></calc-button>
-        <calc-button key="8" action="append"></calc-button>
-        <calc-button key="9" action="append"></calc-button>
-        <calc-button key="DEL" action="delete" class="dark"></calc-button>
+        <calc-button type="digit" value="7"></calc-button>
+        <calc-button type="digit" value="8"></calc-button>
+        <calc-button type="digit" value="9"></calc-button>
+        <calc-button type="delete" value="DEL" class="dark"></calc-button>
 
-        <calc-button key="4" action="append"></calc-button>
-        <calc-button key="5" action="append"></calc-button>
-        <calc-button key="6" action="append"></calc-button>
-        <calc-button key="+" action="enter"></calc-button>
+        <calc-button type="digit" value="4"></calc-button>
+        <calc-button type="digit" value="5"></calc-button>
+        <calc-button type="digit" value="6"></calc-button>
+        <calc-button type="operator" value="+"></calc-button>
 
-        <calc-button key="1" action="append"></calc-button>
-        <calc-button key="2" action="append"></calc-button>
-        <calc-button key="3" action="append"></calc-button>
-        <calc-button key="-" action="enter"></calc-button>
+        <calc-button type="digit" value="1"></calc-button>
+        <calc-button type="digit" value="2"></calc-button>
+        <calc-button type="digit" value="3"></calc-button>
+        <calc-button type="operator" value="-"></calc-button>
 
-        <calc-button key="." action="append"></calc-button>
-        <calc-button key="0" action="append"></calc-button>
-        <calc-button key="/" action="enter"></calc-button>
-        <calc-button key="x" action="enter"></calc-button>
+        <calc-button type="digit" value="."></calc-button>
+        <calc-button type="digit" value="0"></calc-button>
+        <calc-button type="operator" value="/"></calc-button>
+        <calc-button type="operator" value="x"></calc-button>
 
-        <calc-button key="RESET" action="reset" class="dark wide"></calc-button>
-        <calc-button key="=" action="result" class="primary wide"></calc-button>
+        <calc-button type="reset" value="RESET" class="dark wide"></calc-button>
+        <calc-button type="result" value="=" class="primary wide"></calc-button>
       </div>
     </main>
 
@@ -56,8 +56,8 @@
       const display = getCalcDisplay()
 
       onButtonClick(({ detail }) => {
-        const { action, key } = detail
-        display.show(computeKey(action, key))
+        const { type, value } = detail
+        display.show(computeKey(type, value))
       })
     </script>
   </body>

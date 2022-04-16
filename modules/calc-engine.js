@@ -10,35 +10,30 @@ const engine = {
     this._value = num.toString()
   },
 
-  // add new digit to buffer
-  append(key) {
+  digit(key) {
     if (key === '.' && this._value.includes('.')) return this.value
     this._value += key
     return this.value
   },
 
-  // enter a number and save operation
-  enter(key) {
+  operator(key) {
     const value = this.result()
     this.memory = { key, value }
     this.reset()
     return value
   },
 
-  // clears the buffer
   reset() {
     this.value = 0
     return this.value
   },
 
-  // deletes last digit
   delete() {
     this._value = this._value.slice(0, 15).slice(0, -1)
     if (isNaN(this.value)) this.reset()
     return this.value
   },
 
-  // calculates final result
   result() {
     if (this.memory) {
       const { key, value } = this.memory
@@ -52,6 +47,6 @@ const engine = {
   },
 }
 
-export const computeKey = function (action, key) {
-  return engine[action](key)
+export const computeKey = function (type, value) {
+  return engine[type](value)
 }

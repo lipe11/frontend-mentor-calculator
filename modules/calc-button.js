@@ -1,18 +1,16 @@
 class CalcButton extends HTMLElement {
-  // on mounted
   connectedCallback() {
-    const key = this.attributes.key.value
-    const action = this.attributes.action.value
-    this.createButton(key, action)
+    const value = this.attributes.value.value
+    const type = this.attributes.type.value
+    this.createButton(value, type)
   }
 
-  // create the inner button
-  createButton(key, action) {
-    this.innerHTML = `<button>${key}</button>`
+  createButton(value, type) {
+    this.innerHTML = `<button>${value}</button>`
     this.querySelector('button').addEventListener('click', (event) => {
       this.dispatchEvent(
         new CustomEvent('calc-click', {
-          detail: { key, action },
+          detail: { value, type },
         })
       )
     })
