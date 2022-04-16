@@ -1,0 +1,39 @@
+.theme-switcher {
+  display: flex;
+  gap: 2ch;
+  align-items: flex-end;
+}
+
+.theme-switcher span {
+  letter-spacing: 2px;
+}
+
+theme-switcher {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  background-color: var(--element-background);
+  border-radius: 20px;
+  padding: 4px;
+}
+
+theme-switcher div {
+  position: relative;
+  display: flex;
+}
+
+theme-switcher button {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  color: transparent;
+  background-color: var(--primary-button-background);
+  border: 1px solid var(--primary-button-shadow);
+}
+
+theme-switcher span {
+  color: var(--main-color);
+  position: absolute;
+  top: -1.5em;
+  left: 0.4em;
+}

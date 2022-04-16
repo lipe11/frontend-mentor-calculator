@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/png" href="./images/favicon-32x32.png" />
+    <title>Frontend Mentor | Calculator app</title>
+    <link rel="stylesheet" href="styles/styles.css" />
+  </head>
+
+  <body>
+    <main>
+      <header>
+        <h1>calc</h1>
+        <div class="theme-switcher">
+          <span>THEME</span>
+          <theme-switcher themes="theme-1 theme-2 theme-3"></theme-switcher>
+        </div>
+      </header>
+
+      <calc-display></calc-display>
+
+      <div class="keypad">
+        <calc-button key="7" action="append"></calc-button>
+        <calc-button key="8" action="append"></calc-button>
+        <calc-button key="9" action="append"></calc-button>
+        <calc-button key="DEL" action="delete" class="dark"></calc-button>
+
+        <calc-button key="4" action="append"></calc-button>
+        <calc-button key="5" action="append"></calc-button>
+        <calc-button key="6" action="append"></calc-button>
+        <calc-button key="+" action="enter"></calc-button>
+
+        <calc-button key="1" action="append"></calc-button>
+        <calc-button key="2" action="append"></calc-button>
+        <calc-button key="3" action="append"></calc-button>
+        <calc-button key="-" action="enter"></calc-button>
+
+        <calc-button key="." action="append"></calc-button>
+        <calc-button key="0" action="append"></calc-button>
+        <calc-button key="/" action="enter"></calc-button>
+        <calc-button key="x" action="enter"></calc-button>
+
+        <calc-button key="RESET" action="reset" class="dark wide"></calc-button>
+        <calc-button key="=" action="result" class="primary wide"></calc-button>
+      </div>
+    </main>
+
+    <script type="module">
+      import './modules/theme-switcher.js'
+      import { getCalcDisplay } from './modules/calc-display.js'
+      import { onButtonClick } from './modules/calc-button.js'
+      import { computeKey } from './modules/calc-engine.js'
+
+      const display = getCalcDisplay()
+
+      onButtonClick(({ detail }) => {
+        const { action, key } = detail
+        display.show(computeKey(action, key))
+      })
+    </script>
+  </body>
+</html>

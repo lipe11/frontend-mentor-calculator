@@ -1,0 +1,15 @@
+calc-display {
+  color: var(--main-color);
+  background-color: var(--display-background);
+  padding: 1rem 2rem;
+  font-size: 2rem;
+  text-align: right;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+@media (min-width: 450px) {
+  calc-display {
+    font-size: 3rem;
+  }
+}

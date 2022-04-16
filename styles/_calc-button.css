@@ -1,0 +1,58 @@
+calc-button  button {
+  cursor: pointer;
+  display: grid;
+  place-items: center;
+  min-height: 55px;
+  width: 100%;
+  font-size: 2rem;
+  font-weight: 700;
+  border-width: 0;
+  border-radius: 5px;
+  color: var(--button-color);
+  background-color: var(--button-background);
+  box-shadow: 0 5px 0 0 var(--button-shadow);
+}
+
+calc-button:active {
+  box-shadow: none;
+  position: relative;
+  top: 4px;
+}
+
+calc-button.dark button {
+  font-size: 1.5rem;
+  font-weight: 400;
+  color: var(--dark-button-color);
+  background-color: var(--dark-button-background);
+  box-shadow: 0 4px 0 0 var(--dark-button-shadow);
+}
+
+calc-button.primary button {
+  font-weight: 400;
+  color: var(--primary-button-color);
+  background-color: var(--primary-button-background);
+  box-shadow: 0 4px 0 0 var(--primary-button-shadow);
+}
+
+.keypad {
+  display: grid;
+  background-color: var(--element-background);
+  padding: 25px;
+  width: 100%;
+  grid-template-columns: repeat(4, minmax(12px, 1fr));
+  gap: 0.8rem;
+  border-radius: 10px;
+}
+
+.wide {
+  grid-column: span 2;
+}
+
+@media (min-width: 450px) {
+  calc-button button {
+    border-radius: 10px;
+  }
+  .keypad {
+    gap: 1.2rem;
+  }
+}
